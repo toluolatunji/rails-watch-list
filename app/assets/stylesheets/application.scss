@@ -10,3 +10,70 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+.movie_icon {
+  height: 30px;
+  width: 30px;
+}
+
+.container-fluid a {
+  text-decoration: none;
+  color: black;
+}
+
+.banner {
+  // display: flex;
+  background-size: cover;
+  background-position: center;
+  padding: 150px 0;
+  background-image: url("movie_bg.webp");
+}
+
+.banner h3 {
+  margin: 0;
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  font-size: 32px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.banner p {
+  font-size: 20px;
+  color: white;
+  opacity: .7;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
+.my-list {
+  padding-left: 120px;
+  padding-right: 120px;
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+.my-list h5 {
+  font-weight: bold;
+}
+
+.create-list {
+  float: right;
+}
+
+.list {
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+  background-image: url("movie-image-bg.jpg");
+  padding-top: 80px;
+}
+
+.list-link {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.card-item {
+  height: 500px;
+}

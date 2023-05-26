@@ -1,0 +1,31 @@
+<div class="banner">
+  <div class="align-middle text-center">
+    <h3><%= @list.name %></h3>
+  </div>
+</div>
+<div class="my-list">
+  <div class="row">
+    <div class="col-6">
+    </div>
+    <div class="col-6">
+      <%= link_to "add a movie", lists_path, role: "button", class: "btn btn-success btn-sm create-list" %>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <% @list.movies.each do |movie| %>
+    <div class="col-4">
+      <div class="card mb-5 card-item">
+        <%= image_tag "#{movie.poster_url}", style: 'height:300px;width:490px;'%>
+        <div class="card-body">
+            <h5><%= movie.title %></h5>
+            <%= movie.rating%>
+            <p><%= movie.overview %></p>
+        </div>
+        <div class="card-footer">
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

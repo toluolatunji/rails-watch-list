@@ -1,0 +1,26 @@
+<div class="banner">
+  <div class="align-middle text-center">
+    <h3>Save any kind of movies</h3>
+    <p>Classic</p>
+  </div>
+</div>
+
+<div class="my-list">
+  <div class="row">
+    <div class="col-6">
+      <h5>My Lists</h5>
+    </div>
+    <div class="col-6">
+      <%= link_to "Create a movie list", new_list_path, role: "button", class: "btn btn-success btn-sm create-list" %>
+    </div>
+  </div>
+  <div class="row">
+    <% @lists.each do |list| %>
+      <div class="col-4">
+        <div class="list align-middle text-center">
+          <%= link_to list.name, list_path(list), class: 'list-link' %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
