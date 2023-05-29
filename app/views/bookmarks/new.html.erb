@@ -1,6 +1,8 @@
-<h1>New bookmark</h1>
-<%= simple_form_for [@list, @bookmark] do |f| %>
-  <%= f.association :movie %>
-  <%= f.input :comment %>
-  <%= f.submit "Create bookmark", class: "btn btn-primary" %>
-<% end %>
+<div class="container">
+  <h1>New bookmark</h1>
+  <%= simple_form_for [@list, @bookmark] do |f| %>
+    <%= f.association :movie, label_method: :title %>
+    <%= f.input :comment %>
+    <%= f.submit "Create bookmark", class: "btn btn-primary" %>
+  <% end %>
+</div>

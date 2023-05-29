@@ -8,22 +8,33 @@
     <div class="col-6">
     </div>
     <div class="col-6">
-      <%= link_to "add a movie", lists_path, role: "button", class: "btn btn-success btn-sm create-list" %>
+      <%= link_to "add bookmark", new_list_bookmark_path(@list), role: "button", class: "btn btn-success btn-sm create-list" %>
     </div>
   </div>
 </div>
 
 <div class="row">
-  <% @list.movies.each do |movie| %>
+  <% @list.bookmarks.each do |bookmark| %>
     <div class="col-4">
       <div class="card mb-5 card-item">
-        <%= image_tag "#{movie.poster_url}", style: 'height:300px;width:490px;'%>
+        <%= image_tag "#{bookmark.movie.poster_url}", style: 'height:300px;width:500px;'%>
         <div class="card-body">
-            <h5><%= movie.title %></h5>
-            <%= movie.rating%>
-            <p><%= movie.overview %></p>
+            <h5><%= bookmark.movie.title %></h5>
+            <%= bookmark.movie.rating%>
+            <p><%= bookmark.movie.overview %></p>
         </div>
         <div class="card-footer">
+          <div class="row">
+            <div class="col-6">
+              <%= bookmark.comment %>
+            </div>
+            <div class="col-6">
+              <%= link_to list_bookmark_path(bookmark),
+               data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
+                <i class="fa-solid fa-trash-can delete-item"></i>
+              <% end %>
+            </div>
+          </div>
         </div>
       </div>
     </div>
