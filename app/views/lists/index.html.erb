@@ -17,7 +17,7 @@
   <div class="row">
     <% @lists.each do |list| %>
       <div class="col-4">
-        <div class="list align-middle text-center">
+        <div class="list align-middle text-center" <%= image_tag "https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg" %>>
           <%= link_to list.name, list_path(list), class: 'list-link' %>
         </div>
       </div>
